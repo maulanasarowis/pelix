@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pelix Indonesia</title>
+
+</head>
+
+<body>
+  <header-navigation></header-navigation>
+
+  <main class="container mt-5">
+    <section class="row mb-2">
+      <div class="col-sm-12 col-md-3 mt-5">
+        <h5 class="pt-1">Genres ⚙</h5>
+      </div>
+      <div class="col-sm-12 col-md-9">
+        <div class="row">
+          <div class="col-sm-12 col-md-7 mt-5">
+            <!-- <h5 class="pt-1">Top Rated</h5> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="d-none d-md-block col-3">
+        <hr>
+        <movie-genre></movie-genre>
+      </div>
+      <div class="col-sm-12 col-md-9">
+        <receipe-list></receipe-list>
+        <div id="loader-text" class="loader loader-default is-active" style="display: none;">
+          <div class="loader-message">Loading</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="details container mb-5" style="display:none;">
+    <breadcrumb-detail currentpage=""></breadcrumb-detail>
+
+    <div class="row">
+      <div class="col-12 col-md-5 mb-2">
+        <img src="" id="detailImage" class="img-fluid img-shadow">
+      </div>
+      <div class="col-12 col-md-7">
+        <detail-header title="" overview="">
+        </detail-header>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12 col-md-5 mb-4">
+        <h5>Ingredients</h5>
+        <hr>
+        <div class="card-inggredient px-3 py-3">
+          <ul class="ingredients"></ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-7 mb-4">
+        <h5>Method</h5>
+        <hr>
+        <ol class="methods"></ol>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-dark text-center p-5">
+    <p>Created with ❤ <a href="https://www.instagram.com/maulanasarowis/" target="_blank" class="fw-normal text-dark">by
+        Maulana
+        Sarowis</a></p>
+  </footer>
+</body>
+
+</html>
