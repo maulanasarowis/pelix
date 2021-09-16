@@ -4,10 +4,9 @@ import "./scss/style.scss";
 
 // main-section
 import "./script/component/HeaderNavigation";
-import "./script/component/HeaderJumbotron";
 
 // detail-section
-import "./script/component/breadcrumb-detail.js";
+import "./script/component/MovieDetail";
 import "./script/component/DetailHeader";
 
 import main from "./script/view/main.js";

@@ -1,4 +1,4 @@
-class BreadcrumbDetail extends HTMLElement {
+class MovieDetail extends HTMLElement {
   set currentPage(value) {
     this.setAttribute("currentpage", value);
     this.render();
@@ -9,23 +9,24 @@ class BreadcrumbDetail extends HTMLElement {
 
     this.innerHTML = `
         <style>
-            .breadcrumb {
+            .detail {
                 font-size: 0.7rem;
                 background-color: transparent;
                 padding: 0;
+                list-style-type: none;
                 
             }
-            .breadcrumb .breadcrumb-item a {
+            .detail .detail-item a {
                 color: #6c757d;
             }
-            .breadcrumb .breadcrumb-item.active {
+            .detail .detail-item.active {
                 color: #000000;
             }
         </style>
-        <nav class="d-flow-root over-view" aria-label="breadcrumb">
-            <ol class="breadcrumb mt-2 float-left">
-                <li class="breadcrumb-item"><a href="#">Movie</a></li>
-                <li class="breadcrumb-item active" aria-current="page">${this.currentpage}</li>
+        <nav class="d-flow-root over-view" aria-label="detail">
+            <ol class="detail mt-2 float-left">
+                <li class="detail-item"><a href="#">Movie</a></li>
+                <li class="detail-item active" aria-current="page">${this.currentpage}</li>
             </ol>
             <button id="backToLanding" class="btn btn-outline-danger rounded-pill float-right"><i class="fa fa-arrow-left"></i> Back</button>
         </nav>`;
@@ -41,4 +42,4 @@ class BreadcrumbDetail extends HTMLElement {
   }
 }
 
-customElements.define("breadcrumb-detail", BreadcrumbDetail);
+customElements.define("movie-detail", MovieDetail);

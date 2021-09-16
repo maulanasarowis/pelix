@@ -16,7 +16,8 @@ class SearchBar extends HTMLElement {
     this.innerHTML = `
         <style>
             input[type="search"] {
-                background-color: #f8f8f8;
+                background-color: #1C202F;
+                background-color: ;
                 border: 0;
             }
 
@@ -31,11 +32,12 @@ class SearchBar extends HTMLElement {
                 
             .search-container .form-control {
                 padding-left: 3rem;
+                background-color: #1C202F;
             }
 
             .search-container .placeholder-icon {
                 position: absolute;
-                z-index: 2;
+                z-index: 1;
                 display: block;
                 width: 3rem;
                 height: 2.375rem;
@@ -44,11 +46,15 @@ class SearchBar extends HTMLElement {
                 pointer-events: none;
                 color: $gray-500;
             }
+            .btn-search{
+              background-color: #F9C213;
+              margin-left: 0.4rem;
+            }
         </style>
         <div class="d-flex search-container">
             <span class="fa fa-search placeholder-icon"></span>
             <input id="searchElement" class="form-control me-2" type="search" placeholder="Search film and more..." aria-label="Search">
-            <button class="btn btn-dark" id="searchButtonElement" type="button">Search</button>
+            <button class="btn btn-search" id="searchButtonElement" type="button">Search</button>
         </div>`;
 
     this.querySelector("#searchButtonElement").addEventListener(

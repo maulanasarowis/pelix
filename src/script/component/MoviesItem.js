@@ -1,10 +1,10 @@
-import "./breadcrumb-detail.js";
-import DataSource from "../data/DataSource.js";
+import "./MovieDetail";
+import DataSource from "../data/DataSource";
 
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-class ReceipeItem extends HTMLElement {
-  set receipe(item) {
+class MovieItem extends HTMLElement {
+  set movie(item) {
     this._item = item;
     this.render();
   }
@@ -21,6 +21,8 @@ class ReceipeItem extends HTMLElement {
                 font-family: "Open Sans", sans-serif;
                 cursor: pointer;
                 border: 0;
+                background-color: #1C202F;
+                border-radius: 1rem 1rem 0rem 0rem;
             }
 
             .card:hover {
@@ -39,10 +41,12 @@ class ReceipeItem extends HTMLElement {
 
             .card .card-body .card-title {
                 font-size: 0.9rem;
+                padding: 0.5rem;
             }
 
             .card .card-body .card-text {
                 font-size: 0.7rem;
+                padding: 0.5rem;
             }
 
             .icon-svg {
@@ -51,8 +55,8 @@ class ReceipeItem extends HTMLElement {
             }
         </style>
         <div class="col mb-4">
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-anchor=".jumbotron">
-                <div class="card card-receipe" data-id="${this._item.id}">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="card card-movie" data-id="${this._item.id}">
                     <img src="${
                       this._item.poster_path
                         ? IMG_URL + this._item.poster_path
@@ -77,41 +81,35 @@ class ReceipeItem extends HTMLElement {
             </div>
         </div>`;
 
-    // Sequenced Animation
     let delay = 0;
     $("[data-aos]").each(function () {
       if ($(this).is(":visible") == true) {
-        delay = delay + 400;
+        delay = delay + 100;
         $(this).attr("data-aos-delay", delay);
       }
     });
 
-    // PreLoader Element
     const loaderElement = document.querySelector("#loader-text");
 
-    // Datasource Infromation Receipe
-    const informationRecipe = async (id) => {
+    const informationMovie = async (id) => {
       loaderElement.style.display = "block";
 
       try {
-        const result = await DataSource.informationRecipe(id);
+        const result = await DataSource.informationMovie(id);
         renderResult(result);
       } catch (message) {
         fallbackResult(message);
       }
     };
 
-    // Callback Success
     const renderResult = (results) => {
       loaderElement.style.display = "none";
 
       this.switchPage();
 
-      // Breadcrumb
-      const breadcrumbElement = document.querySelector("breadcrumb-detail");
-      breadcrumbElement.currentPage = results.title;
+      const movieDetailElement = document.querySelector("movie-detail");
+      movieDetailElement.currentPage = results.title;
 
-      // Image
       $("#detailImage").attr(
         "src",
         results.backdrop_path
@@ -119,7 +117,6 @@ class ReceipeItem extends HTMLElement {
           : "http://via.placeholder.com/1080x1580"
       );
 
-      // Detail Header
       const detailHeaderElement = document.querySelector("detail-header");
       const dataHeader = {
         title: results.title ? results.title : "NaN",
@@ -127,32 +124,20 @@ class ReceipeItem extends HTMLElement {
       };
       detailHeaderElement.update = dataHeader;
 
-      // Ingredients
-      // results.extendedIngredients.forEach((item) => {
-      //   $(".ingredients").append(`<li>${item.original}</li>`);
-      // });
-
-      // Method
-      // results.analyzedInstructions[0].steps.forEach((item) => {
-      //   $(".methods").append(`<li>${item.step}</li>`);
-      // });
-
       $(window).scrollTop(0);
     };
 
-    // Callback Failed
     const fallbackResult = (message) => {
       loaderElement.style.display = "none";
       alert(message);
     };
 
-    // Card Receipe on Click
-    const cardRecipe = this.querySelector(".card-receipe");
-    cardRecipe.addEventListener("click", function () {
-      const idReceipe = this.getAttribute("data-id");
-      informationRecipe(idReceipe);
+    const cardMovie = this.querySelector(".card-movie");
+    cardMovie.addEventListener("click", function () {
+      const idMovie = this.getAttribute("data-id");
+      informationMovie(idMovie);
     });
   }
 }
 
-customElements.define("receipe-item", ReceipeItem);
+customElements.define("movie-item", MovieItem);

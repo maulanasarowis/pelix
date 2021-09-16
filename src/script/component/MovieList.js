@@ -1,18 +1,18 @@
 import "./MoviesItem";
 
-class ReceipeList extends HTMLElement {
-  set receipes(items) {
+class MovieList extends HTMLElement {
+  set movies(items) {
     this._items = items;
     this.render();
   }
 
   render() {
     this.innerHTML = "";
-    this.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
+    this.className = "row row-cols-sm-12 row-cols-md-6";
     this._items.forEach((item) => {
-      const receipeItemElement = document.createElement("receipe-item");
-      receipeItemElement.receipe = item;
-      this.appendChild(receipeItemElement);
+      const movieItemElement = document.createElement("movie-item");
+      movieItemElement.movie = item;
+      this.appendChild(movieItemElement);
     });
   }
 
@@ -33,4 +33,4 @@ class ReceipeList extends HTMLElement {
   }
 }
 
-customElements.define("receipe-list", ReceipeList);
+customElements.define("movie-list", MovieList);

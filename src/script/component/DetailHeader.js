@@ -14,21 +14,21 @@ class DetailHeader extends HTMLElement {
             .over-view{
               margin-top:100px;
             }
-            .breadcrumb {
+            .detail {
                 font-size: 0.7rem;
                 background-color: transparent;
                 padding: 0;
             }
-            .breadcrumb .breadcrumb-item a {
+            .detail .detail-item a {
                 color: #6c757d;
             }
-            .breadcrumb .breadcrumb-item.active {
-                color: #000000;
+            .detail .detail-item.active {
+                color: #fff;
             }
         </style>
         <section class="over-view">
           <h5>${this.title}</h5>
-          <div class="row recipe-details">
+          <div class="row movie-details">
             <div class="col-12 mt-3 text-justify">
               <p>${this.overview}</p>
             </div>

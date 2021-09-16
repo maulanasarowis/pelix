@@ -1,5 +1,5 @@
 class DataSource {
-  static searchRecipe(keyword) {
+  static searchMovie(keyword) {
     return fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=4a014da82393af81cebcaf15678d560e&query=${keyword}&page=1`
     )
@@ -13,9 +13,10 @@ class DataSource {
           return Promise.reject(`is not found`);
         }
       });
+    console.log(this.searchMovie);
   }
 
-  static movieTrending(keyword) {
+  static movieTrending() {
     return fetch(
       `https://api.themoviedb.org/3/trending/movie/week?api_key=4a014da82393af81cebcaf15678d560e`
     )
@@ -28,11 +29,10 @@ class DataSource {
         } else {
           return Promise.reject(`is not found`);
         }
-        // ${keyword}
       });
   }
 
-  static informationRecipe(id) {
+  static informationMovie(id) {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=4a014da82393af81cebcaf15678d560e`
     )

@@ -12,26 +12,9 @@
   <header-navigation></header-navigation>
 
   <main class="container mt-5">
-    <section class="row mb-2">
-      <div class="col-sm-12 col-md-3 mt-5">
-        <h5 class="pt-1">Genres ⚙</h5>
-      </div>
-      <div class="col-sm-12 col-md-9">
-        <div class="row">
-          <div class="col-sm-12 col-md-7 mt-5">
-            <!-- <h5 class="pt-1">Top Rated</h5> -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="d-none d-md-block col-3">
-        <hr>
-        <movie-genre></movie-genre>
-      </div>
-      <div class="col-sm-12 col-md-9">
-        <receipe-list></receipe-list>
+    <section class="row" style="margin-top: 8rem;">
+      <div class="col-sm-12 col-md-12 ">
+        <movie-list></movie-list>
         <div id="loader-text" class="loader loader-default is-active" style="display: none;">
           <div class="loader-message">Loading</div>
         </div>
@@ -40,34 +23,21 @@
   </main>
 
   <section class="details container mb-5" style="display:none;">
-    <breadcrumb-detail currentpage=""></breadcrumb-detail>
+    <movie-detail currentpage=""></movie-detail>
 
     <div class="row">
-      <div class="col-12 col-md-5 mb-2">
+      <div class="col-12 col-md-6 col-sm-12 mb-2">
         <img src="" id="detailImage" class="img-fluid img-shadow">
       </div>
-      <div class="col-12 col-md-7">
+      <div class="col-12 col-md-6 col-sm-12">
         <detail-header title="" overview="">
         </detail-header>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-12 col-md-5 mb-4">
-        <h5>Ingredients</h5>
-        <hr>
-        <div class="card-inggredient px-3 py-3">
-          <ul class="ingredients"></ul>
-        </div>
-      </div>
-      <div class="col-12 col-md-7 mb-4">
-        <h5>Method</h5>
-        <hr>
-        <ol class="methods"></ol>
       </div>
     </div>
   </section>
 
   <footer class="text-dark text-center p-5">
+    <p style="color: #F9C213">Pelix<span style="color: #fff">.com</span></p>
     <p>Created with ❤ <a href="https://www.instagram.com/maulanasarowis/" target="_blank" class="fw-normal text-dark">by
         Maulana
         Sarowis</a></p>

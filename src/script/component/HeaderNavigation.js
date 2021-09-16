@@ -4,13 +4,14 @@ class HeaderNavigation extends HTMLElement {
         <style>
             header {
               list-style-type: none;
-              background-color: #FEFEFE;
+              background-color: #131620;
               overflow: hidden;
               top: 0;
               position: fixed;
               justify-content: center;
               width: 100%;
               z-index: 1;
+              color: #fff;
               
             }
             .brand-icon {
@@ -19,9 +20,9 @@ class HeaderNavigation extends HTMLElement {
             }
             
             .navbar .navbar-brand {
-                font-family: "Fira Sans Condensed", sans-serif;
                 font-size: 2rem;
                 margin-right: 8rem;
+                color: #F9C213;
             }
 
             .navbar .nav-item {
@@ -31,11 +32,18 @@ class HeaderNavigation extends HTMLElement {
             .navbar .nav-item.active {
                 font-weight: bold;
             }
+
+            .navbar .nav-item a.nav-link {
+                color: #fff;
+            }
+            .navbar .nav-item.active a.nav-link {
+                color: #F9C213;
+            }
         </style>
         <header>
             <nav class="container my-3 navbar navbar-expand-lg navbar-light p-0">
                 <a class="navbar-brand" href="#">
-                    <span>🎬</span>Pelix
+                    <span>🎬</span>Pelix<span style="color: #fff">.com</span>
                 </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
