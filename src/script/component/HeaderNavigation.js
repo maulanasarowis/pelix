@@ -12,7 +12,6 @@ class HeaderNavigation extends HTMLElement {
               width: 100%;
               z-index: 1;
               color: #fff;
-              
             }
             .brand-icon {
                 width: 48px;
@@ -34,15 +33,17 @@ class HeaderNavigation extends HTMLElement {
             }
 
             .navbar .nav-item a.nav-link {
-                color: #fff;
+                color: #fff !important;
+                text-decoration: none;
             }
             .navbar .nav-item.active a.nav-link {
-                color: #F9C213;
+                color: #F9C213 !important;
+                text-decoration: none;
             }
         </style>
         <header>
             <nav class="container my-3 navbar navbar-expand-lg navbar-light p-0">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#" style="color: #F9C213">
                     <span>🎬</span>Pelix<span style="color: #fff">.com</span>
                 </a>
 
@@ -63,7 +64,7 @@ class HeaderNavigation extends HTMLElement {
                         
                     </ul>
                 </div>
-                <search-bar></search-bar>
+                <search-bar class="ml-2"></search-bar>
             </nav>
         </header>`;
   }

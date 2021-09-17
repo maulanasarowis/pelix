@@ -13,7 +13,6 @@ class DataSource {
           return Promise.reject(`is not found`);
         }
       });
-    console.log(this.searchMovie);
   }
 
   static movieTrending() {

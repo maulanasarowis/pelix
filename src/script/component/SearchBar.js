@@ -49,6 +49,7 @@ class SearchBar extends HTMLElement {
             .btn-search{
               background-color: #F9C213;
               margin-left: 0.4rem;
+              border-radius: 0.5rem;
             }
         </style>
         <div class="d-flex search-container">

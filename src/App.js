@@ -1,11 +1,7 @@
 import "bootstrap";
 import "regenerator-runtime";
 import "./scss/style.scss";
-
-// main-section
 import "./script/component/HeaderNavigation";
-
-// detail-section
 import "./script/component/MovieDetail";
 import "./script/component/DetailHeader";
 
