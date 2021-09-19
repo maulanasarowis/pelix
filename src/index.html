@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<html>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pelix Indonesia</title>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pelix Indonesia</title>
 </head>
 
 <body>
-  <header-navigation></header-navigation>
+  <Header>
+    <header-navigation></header-navigation>
+  </Header>
 
   <main class="container mt-5">
     <section class="row" style="margin-top: 8rem;">
@@ -21,26 +22,29 @@
       </div>
     </section>
   </main>
-
-  <section class="details container mb-5" style="display:none;">
-    <movie-detail currentpage=""></movie-detail>
-
-    <div class="row">
-      <div class="col-12 col-md-6 col-sm-12 mb-2">
-        <img src="" id="detailImage" class="img-fluid img-shadow">
+  <article>
+    <section class="details container mb-5" style="display:none;">
+      <movie-detail currentpage=""></movie-detail>
+      <div class="row">
+        <div class="col-12 col-md-6 col-sm-12 mb-2">
+          <img src="" id="detailImage" class="img-fluid img-shadow">
+        </div>
+        <div class="col-12 col-md-6 col-sm-12">
+          <detail-header title="" overview="">
+          </detail-header>
+        </div>
       </div>
-      <div class="col-12 col-md-6 col-sm-12">
-        <detail-header title="" overview="">
-        </detail-header>
-      </div>
-    </div>
-  </section>
+    </section>
+  </article>
 
-  <footer class="text-dark text-center p-5">
-    <p style="color: #F9C213">Pelix<span style="color: #fff">.com</span></p>
-    <p>Created with ❤ <a href="https://www.instagram.com/maulanasarowis/" target="_blank" class="fw-normal text-dark">by
-        Maulana
-        Sarowis</a></p>
+  <footer>
+    <section class="justify-content-center text-dark text-center p-5">
+      <p style="color: #F9C213">Pelix<span style="color: #fff">.com</span></p>
+      <p>Created with ❤ <a href="https://www.instagram.com/maulanasarowis/" target="_blank"
+          class="fw-normal text-dark">by
+          Maulana
+          Sarowis</a></p>
+    </section>
   </footer>
 </body>
 
