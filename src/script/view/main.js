@@ -2,7 +2,6 @@ import "../component/MovieList";
 import "../component/SearchBar";
 
 import DataSource from "../data/DataSource";
-
 const main = () => {
   const searchElement = document.querySelector("search-bar");
   const movieListElement = document.querySelector("movie-list");
