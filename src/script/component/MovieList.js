@@ -18,17 +18,18 @@ class MovieList extends HTMLElement {
 
   renderError(message) {
     this.innerHTML = `
-        <style>
-            .placeholder {
-                font-weight: lighter;
-                color: rgba(0,0,0,0.5);
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                text-align: center;
-            }
-        </style>`;
+      <style>
+        .placeholder {
+          font-weight: lighter;
+          color: rgba(0,0,0,0.5);
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          text-align: center;
+        }
+      </style>
+      `;
     this.innerHTML += `<h2 class="placeholder">${message}</h2>`;
   }
 }
