@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: ["./src/app.js", "font-awesome/scss/font-awesome.scss"],
+  entry: ["./src/App.js", "font-awesome/scss/font-awesome.scss"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
